@@ -1,0 +1,12 @@
+let activeTabId = null;
+let startTime = null;
+
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  if (activeTabId !== null) {
+    // Calculate time spent on the previous tab
+    const timeSpent = Date.now() - startTime;
+    // Store or update the time spent for the previous tab
+  }
+  activeTabId = activeInfo.tabId;
+  startTime = Date.now();
+});
